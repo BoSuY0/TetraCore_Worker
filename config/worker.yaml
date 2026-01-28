@@ -1,0 +1,40 @@
+hub:
+  url: "${HUB_URL:ws://localhost:8000/ws}"
+  auth_token: "${AUTH_TOKEN:}"
+  ping_interval: 30
+  ping_timeout: 15
+  reconnect_delay: 5
+  max_reconnect_delay: 60
+  connect_timeout: 15
+  max_reconnect_failures: 0
+
+worker:
+  id: "${WORKER_ID:}"
+  concurrency: 10
+  heartbeat_interval: 30
+
+redis:
+  url: "${REDIS_URL:redis://localhost:6379/0}"
+  password: "${REDIS_PASSWORD:}"
+  db: 0
+  pool_size: 20
+  tls_enabled: false
+
+mysql:
+  dsn: "${MYSQL_DSN:}"
+  max_open_conns: 25
+  max_idle_conns: 10
+  conn_max_lifetime: 300
+
+telegram:
+  bot_token: "${BOT_TOKEN:}"
+  api_url: "https://api.telegram.org"
+  timeout: 10
+
+logging:
+  level: "${LOG_LEVEL:info}"
+  format: "${LOG_FORMAT:json}"
+
+metrics:
+  enabled: false
+  port: 9090
