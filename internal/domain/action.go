@@ -3,7 +3,7 @@ package domain
 import "context"
 
 // ActionHandler defines the interface for task action handlers.
-// Each action (e.g. "get_chat_settings", "check_user_admin") implements this.
+// Кожен action (наприклад "get_chat_settings") реалізує цей інтерфейс.
 type ActionHandler interface {
 	// Execute runs the action with given parameters and returns a result.
 	Execute(ctx context.Context, params ActionParams) (ActionResult, error)

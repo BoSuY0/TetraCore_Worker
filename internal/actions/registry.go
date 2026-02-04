@@ -140,9 +140,6 @@ func RegisterAll(
 	// --- Cache actions ---
 	reg.Register(NewCleanupCache(redisClient, logger))
 
-	// --- Admin actions ---
-	reg.Register(NewCheckUserAdmin(telegramClient, logger))
-
 	// --- Test actions ---
 	reg.Register(NewTestSimple(logger))
 }
