@@ -44,6 +44,24 @@ type WorkerConfig struct {
 	ID                string `mapstructure:"id"`
 	Concurrency       int    `mapstructure:"concurrency"`
 	HeartbeatInterval int    `mapstructure:"heartbeat_interval"`
+	// Adaptive concurrency controls.
+	AdaptiveConcurrency         bool    `mapstructure:"adaptive_concurrency"`
+	AdaptivePolicy              string  `mapstructure:"adaptive_policy"`
+	AdaptivePollSec             float64 `mapstructure:"adaptive_poll_sec"`
+	AdaptiveCooldownSec         float64 `mapstructure:"adaptive_cooldown_sec"`
+	AdaptiveCooldownUpSec       float64 `mapstructure:"adaptive_cooldown_up_sec"`
+	AdaptiveCooldownDownSec     float64 `mapstructure:"adaptive_cooldown_down_sec"`
+	AdaptiveHoldoffAfterDownSec float64 `mapstructure:"adaptive_holdoff_after_down_sec"`
+	AdaptiveMinConcurrency      int     `mapstructure:"adaptive_min_concurrency"`
+	AdaptiveMaxConcurrency      int     `mapstructure:"adaptive_max_concurrency"`
+	AdaptiveMinSamples          int     `mapstructure:"adaptive_min_samples"`
+	AdaptiveTargetCPU           int     `mapstructure:"adaptive_target_cpu"`
+	AdaptiveTargetLatencyMs     float64 `mapstructure:"adaptive_target_latency_ms"`
+	AdaptiveErrorHi             float64 `mapstructure:"adaptive_error_hi"`
+	AdaptiveErrorLo             float64 `mapstructure:"adaptive_error_lo"`
+	AdaptiveHysteresis          int     `mapstructure:"adaptive_hysteresis"`
+	AdaptiveAIStep              int     `mapstructure:"adaptive_ai_step"`
+	AdaptiveMDFactor            float64 `mapstructure:"adaptive_md_factor"`
 }
 
 // RedisConfig — параметри підключення до Redis.
