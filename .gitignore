@@ -4,8 +4,9 @@
 *.dll
 *.so
 *.dylib
-worker
-tetracore-worker
+/worker
+/tetracore-worker
+/bin/
 
 # Test binary
 *.test
